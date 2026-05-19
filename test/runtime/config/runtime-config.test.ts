@@ -442,7 +442,6 @@ describe.sequential("runtime-config auto agent selection", () => {
 		}
 	});
 
-<<<<<<< HEAD
 	it("defaults and persists the Ollama base URL", async () => {
 		const { path: tempHome, cleanup: cleanupHome } = createTempDir("kanban-home-runtime-config-ollama-url-");
 		const { path: tempProject, cleanup: cleanupProject } = createTempDir("kanban-project-runtime-config-ollama-url-");
@@ -473,8 +472,6 @@ describe.sequential("runtime-config auto agent selection", () => {
 		}
 	});
 
-=======
->>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	it("preserves concurrent config updates across processes", async () => {
 		const { path: tempHome, cleanup: cleanupHome } = createTempDir("kanban-home-runtime-config-concurrent-");
 		const { path: tempProject, cleanup: cleanupProject } = createTempDir("kanban-project-runtime-config-concurrent-");

@@ -2,7 +2,7 @@
 
 This roadmap describes the planned conversion of Kanban into a personal Ubuntu-first local-agent IDE/orchestrator. It is intentionally implementation-oriented and references the current codebase so work can be assigned as small, low-risk tasks.
 
-No code has been implemented for this roadmap yet.
+Some foundation tasks have now been implemented. The current task status index lives in `tasks/README.md`.
 
 ## Goals
 

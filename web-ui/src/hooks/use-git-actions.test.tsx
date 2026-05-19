@@ -81,10 +81,7 @@ function createRuntimeConfig(selectedAgentId: RuntimeConfigResponse["selectedAge
 		selectedAgentId,
 		selectedShortcutLabel: null,
 		agentAutonomousModeEnabled: true,
-<<<<<<< HEAD
 		ollamaBaseUrl: "http://127.0.0.1:11434",
-=======
->>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		effectiveCommand: null,
 		globalConfigPath: "/tmp/global-config.json",
 		projectConfigPath: "/tmp/project-config.json",

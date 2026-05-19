@@ -1,7 +1,7 @@
 # F2-02 Add Ollama Config Shape
 
 ## Status
-Complete. Implemented as an additive config field; verification commands are blocked until dependencies are installed because `tsc` and `vitest` are not currently available in `node_modules`.
+Complete. Implemented as an additive config field and verified after dependency installation.
 
 ## Goal
 Add runtime config fields for a local Ollama endpoint.
