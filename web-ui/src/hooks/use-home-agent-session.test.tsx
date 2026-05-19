@@ -64,7 +64,10 @@ function createRuntimeConfig(overrides: Partial<RuntimeConfigResponse> = {}): Ru
 		selectedAgentId: "codex",
 		selectedShortcutLabel: null,
 		agentAutonomousModeEnabled: true,
+<<<<<<< HEAD
 		ollamaBaseUrl: "http://127.0.0.1:11434",
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		effectiveCommand: "codex --dangerously-bypass-approvals-and-sandbox",
 		globalConfigPath: "/tmp/global-config.json",
 		projectConfigPath: "/tmp/project-config.json",

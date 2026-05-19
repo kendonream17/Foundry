@@ -14,7 +14,10 @@ interface RuntimeGlobalConfigFileShape {
 	selectedAgentId?: RuntimeAgentId;
 	selectedShortcutLabel?: string;
 	agentAutonomousModeEnabled?: boolean;
+<<<<<<< HEAD
 	ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	readyForReviewNotificationsEnabled?: boolean;
 	commitPromptTemplate?: string;
 	openPrPromptTemplate?: string;
@@ -30,7 +33,10 @@ export interface RuntimeConfigState {
 	selectedAgentId: RuntimeAgentId;
 	selectedShortcutLabel: string | null;
 	agentAutonomousModeEnabled: boolean;
+<<<<<<< HEAD
 	ollamaBaseUrl: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	readyForReviewNotificationsEnabled: boolean;
 	shortcuts: RuntimeProjectShortcut[];
 	commitPromptTemplate: string;
@@ -43,7 +49,10 @@ export interface RuntimeConfigUpdateInput {
 	selectedAgentId?: RuntimeAgentId;
 	selectedShortcutLabel?: string | null;
 	agentAutonomousModeEnabled?: boolean;
+<<<<<<< HEAD
 	ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	readyForReviewNotificationsEnabled?: boolean;
 	shortcuts?: RuntimeProjectShortcut[];
 	commitPromptTemplate?: string;
@@ -59,7 +68,10 @@ const PROJECT_CONFIG_FILENAME = "config.json";
 const DEFAULT_AGENT_ID: RuntimeAgentId = "cline";
 const AUTO_SELECT_AGENT_PRIORITY: readonly RuntimeAgentId[] = ["claude", "codex", "droid", "kiro"];
 const DEFAULT_AGENT_AUTONOMOUS_MODE_ENABLED = true;
+<<<<<<< HEAD
 export const DEFAULT_OLLAMA_BASE_URL = "http://127.0.0.1:11434";
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 const DEFAULT_READY_FOR_REVIEW_NOTIFICATIONS_ENABLED = true;
 const DEFAULT_COMMIT_PROMPT_TEMPLATE = `You are in a worktree on a detached HEAD. When you are finished with the task, commit the working changes onto {{base_ref}}.
 
@@ -189,6 +201,7 @@ function normalizeBoolean(value: unknown, fallback: boolean): boolean {
 	return fallback;
 }
 
+<<<<<<< HEAD
 function normalizeOllamaBaseUrl(value: unknown): string {
 	if (typeof value !== "string") {
 		return DEFAULT_OLLAMA_BASE_URL;
@@ -197,6 +210,8 @@ function normalizeOllamaBaseUrl(value: unknown): string {
 	return normalized.length > 0 ? normalized : DEFAULT_OLLAMA_BASE_URL;
 }
 
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 function normalizeShortcutLabel(value: unknown): string | null {
 	if (typeof value !== "string") {
 		return null;
@@ -291,7 +306,10 @@ function toRuntimeConfigState({
 			globalConfig?.agentAutonomousModeEnabled,
 			DEFAULT_AGENT_AUTONOMOUS_MODE_ENABLED,
 		),
+<<<<<<< HEAD
 		ollamaBaseUrl: normalizeOllamaBaseUrl(globalConfig?.ollamaBaseUrl),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		readyForReviewNotificationsEnabled: normalizeBoolean(
 			globalConfig?.readyForReviewNotificationsEnabled,
 			DEFAULT_READY_FOR_REVIEW_NOTIFICATIONS_ENABLED,
@@ -322,7 +340,10 @@ async function writeRuntimeGlobalConfigFile(
 		selectedAgentId?: RuntimeAgentId;
 		selectedShortcutLabel?: string | null;
 		agentAutonomousModeEnabled?: boolean;
+<<<<<<< HEAD
 		ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		readyForReviewNotificationsEnabled?: boolean;
 		commitPromptTemplate?: string;
 		openPrPromptTemplate?: string;
@@ -342,11 +363,14 @@ async function writeRuntimeGlobalConfigFile(
 		config.agentAutonomousModeEnabled === undefined
 			? DEFAULT_AGENT_AUTONOMOUS_MODE_ENABLED
 			: normalizeBoolean(config.agentAutonomousModeEnabled, DEFAULT_AGENT_AUTONOMOUS_MODE_ENABLED);
+<<<<<<< HEAD
 	const ollamaBaseUrl =
 		config.ollamaBaseUrl === undefined ? undefined : normalizeOllamaBaseUrl(config.ollamaBaseUrl);
 	const existingOllamaBaseUrl = hasOwnKey(existing, "ollamaBaseUrl")
 		? normalizeOllamaBaseUrl(existing?.ollamaBaseUrl)
 		: undefined;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	const readyForReviewNotificationsEnabled =
 		config.readyForReviewNotificationsEnabled === undefined
 			? DEFAULT_READY_FOR_REVIEW_NOTIFICATIONS_ENABLED
@@ -381,6 +405,7 @@ async function writeRuntimeGlobalConfigFile(
 	) {
 		payload.agentAutonomousModeEnabled = agentAutonomousModeEnabled;
 	}
+<<<<<<< HEAD
 	if (ollamaBaseUrl !== undefined) {
 		if (hasOwnKey(existing, "ollamaBaseUrl") || ollamaBaseUrl !== DEFAULT_OLLAMA_BASE_URL) {
 			payload.ollamaBaseUrl = ollamaBaseUrl;
@@ -388,6 +413,8 @@ async function writeRuntimeGlobalConfigFile(
 	} else if (existingOllamaBaseUrl !== undefined) {
 		payload.ollamaBaseUrl = existingOllamaBaseUrl;
 	}
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	if (
 		hasOwnKey(existing, "readyForReviewNotificationsEnabled") ||
 		readyForReviewNotificationsEnabled !== DEFAULT_READY_FOR_REVIEW_NOTIFICATIONS_ENABLED
@@ -478,7 +505,10 @@ function createRuntimeConfigStateFromValues(input: {
 	selectedAgentId: RuntimeAgentId;
 	selectedShortcutLabel: string | null;
 	agentAutonomousModeEnabled: boolean;
+<<<<<<< HEAD
 	ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	readyForReviewNotificationsEnabled: boolean;
 	shortcuts: RuntimeProjectShortcut[];
 	commitPromptTemplate: string;
@@ -493,7 +523,10 @@ function createRuntimeConfigStateFromValues(input: {
 			input.agentAutonomousModeEnabled,
 			DEFAULT_AGENT_AUTONOMOUS_MODE_ENABLED,
 		),
+<<<<<<< HEAD
 		ollamaBaseUrl: normalizeOllamaBaseUrl(input.ollamaBaseUrl),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		readyForReviewNotificationsEnabled: normalizeBoolean(
 			input.readyForReviewNotificationsEnabled,
 			DEFAULT_READY_FOR_REVIEW_NOTIFICATIONS_ENABLED,
@@ -513,7 +546,10 @@ export function toGlobalRuntimeConfigState(current: RuntimeConfigState): Runtime
 		selectedAgentId: current.selectedAgentId,
 		selectedShortcutLabel: current.selectedShortcutLabel,
 		agentAutonomousModeEnabled: current.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 		ollamaBaseUrl: current.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		readyForReviewNotificationsEnabled: current.readyForReviewNotificationsEnabled,
 		shortcuts: [],
 		commitPromptTemplate: current.commitPromptTemplate,
@@ -549,7 +585,10 @@ export async function saveRuntimeConfig(
 		selectedAgentId: RuntimeAgentId;
 		selectedShortcutLabel: string | null;
 		agentAutonomousModeEnabled: boolean;
+<<<<<<< HEAD
 		ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		readyForReviewNotificationsEnabled: boolean;
 		shortcuts: RuntimeProjectShortcut[];
 		commitPromptTemplate: string;
@@ -562,7 +601,10 @@ export async function saveRuntimeConfig(
 			selectedAgentId: config.selectedAgentId,
 			selectedShortcutLabel: config.selectedShortcutLabel,
 			agentAutonomousModeEnabled: config.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 			ollamaBaseUrl: config.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			readyForReviewNotificationsEnabled: config.readyForReviewNotificationsEnabled,
 			commitPromptTemplate: config.commitPromptTemplate,
 			openPrPromptTemplate: config.openPrPromptTemplate,
@@ -574,7 +616,10 @@ export async function saveRuntimeConfig(
 			selectedAgentId: config.selectedAgentId,
 			selectedShortcutLabel: config.selectedShortcutLabel,
 			agentAutonomousModeEnabled: config.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 			ollamaBaseUrl: config.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			readyForReviewNotificationsEnabled: config.readyForReviewNotificationsEnabled,
 			shortcuts: config.shortcuts,
 			commitPromptTemplate: config.commitPromptTemplate,
@@ -595,8 +640,11 @@ export async function updateRuntimeConfig(cwd: string, updates: RuntimeConfigUpd
 			selectedShortcutLabel:
 				updates.selectedShortcutLabel === undefined ? current.selectedShortcutLabel : updates.selectedShortcutLabel,
 			agentAutonomousModeEnabled: updates.agentAutonomousModeEnabled ?? current.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 			ollamaBaseUrl:
 				updates.ollamaBaseUrl === undefined ? current.ollamaBaseUrl : normalizeOllamaBaseUrl(updates.ollamaBaseUrl),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			readyForReviewNotificationsEnabled:
 				updates.readyForReviewNotificationsEnabled ?? current.readyForReviewNotificationsEnabled,
 			shortcuts: projectConfigPath ? (updates.shortcuts ?? current.shortcuts) : current.shortcuts,
@@ -608,7 +656,10 @@ export async function updateRuntimeConfig(cwd: string, updates: RuntimeConfigUpd
 			nextConfig.selectedAgentId !== current.selectedAgentId ||
 			nextConfig.selectedShortcutLabel !== current.selectedShortcutLabel ||
 			nextConfig.agentAutonomousModeEnabled !== current.agentAutonomousModeEnabled ||
+<<<<<<< HEAD
 			nextConfig.ollamaBaseUrl !== current.ollamaBaseUrl ||
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			nextConfig.readyForReviewNotificationsEnabled !== current.readyForReviewNotificationsEnabled ||
 			nextConfig.commitPromptTemplate !== current.commitPromptTemplate ||
 			nextConfig.openPrPromptTemplate !== current.openPrPromptTemplate ||
@@ -622,7 +673,10 @@ export async function updateRuntimeConfig(cwd: string, updates: RuntimeConfigUpd
 			selectedAgentId: nextConfig.selectedAgentId,
 			selectedShortcutLabel: nextConfig.selectedShortcutLabel,
 			agentAutonomousModeEnabled: nextConfig.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 			ollamaBaseUrl: nextConfig.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			readyForReviewNotificationsEnabled: nextConfig.readyForReviewNotificationsEnabled,
 			commitPromptTemplate: nextConfig.commitPromptTemplate,
 			openPrPromptTemplate: nextConfig.openPrPromptTemplate,
@@ -636,7 +690,10 @@ export async function updateRuntimeConfig(cwd: string, updates: RuntimeConfigUpd
 			selectedAgentId: nextConfig.selectedAgentId,
 			selectedShortcutLabel: nextConfig.selectedShortcutLabel,
 			agentAutonomousModeEnabled: nextConfig.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 			ollamaBaseUrl: nextConfig.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			readyForReviewNotificationsEnabled: nextConfig.readyForReviewNotificationsEnabled,
 			shortcuts: nextConfig.shortcuts,
 			commitPromptTemplate: nextConfig.commitPromptTemplate,
@@ -665,10 +722,13 @@ export async function updateGlobalRuntimeConfig(
 						? current.selectedShortcutLabel
 						: updates.selectedShortcutLabel,
 				agentAutonomousModeEnabled: updates.agentAutonomousModeEnabled ?? current.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 				ollamaBaseUrl:
 					updates.ollamaBaseUrl === undefined
 						? current.ollamaBaseUrl
 						: normalizeOllamaBaseUrl(updates.ollamaBaseUrl),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 				readyForReviewNotificationsEnabled:
 					updates.readyForReviewNotificationsEnabled ?? current.readyForReviewNotificationsEnabled,
 				shortcuts: current.shortcuts,
@@ -680,7 +740,10 @@ export async function updateGlobalRuntimeConfig(
 				nextConfig.selectedAgentId !== current.selectedAgentId ||
 				nextConfig.selectedShortcutLabel !== current.selectedShortcutLabel ||
 				nextConfig.agentAutonomousModeEnabled !== current.agentAutonomousModeEnabled ||
+<<<<<<< HEAD
 				nextConfig.ollamaBaseUrl !== current.ollamaBaseUrl ||
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 				nextConfig.readyForReviewNotificationsEnabled !== current.readyForReviewNotificationsEnabled ||
 				nextConfig.commitPromptTemplate !== current.commitPromptTemplate ||
 				nextConfig.openPrPromptTemplate !== current.openPrPromptTemplate;
@@ -693,7 +756,10 @@ export async function updateGlobalRuntimeConfig(
 				selectedAgentId: nextConfig.selectedAgentId,
 				selectedShortcutLabel: nextConfig.selectedShortcutLabel,
 				agentAutonomousModeEnabled: nextConfig.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 				ollamaBaseUrl: nextConfig.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 				readyForReviewNotificationsEnabled: nextConfig.readyForReviewNotificationsEnabled,
 				commitPromptTemplate: nextConfig.commitPromptTemplate,
 				openPrPromptTemplate: nextConfig.openPrPromptTemplate,
@@ -705,7 +771,10 @@ export async function updateGlobalRuntimeConfig(
 				selectedAgentId: nextConfig.selectedAgentId,
 				selectedShortcutLabel: nextConfig.selectedShortcutLabel,
 				agentAutonomousModeEnabled: nextConfig.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 				ollamaBaseUrl: nextConfig.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 				readyForReviewNotificationsEnabled: nextConfig.readyForReviewNotificationsEnabled,
 				shortcuts: nextConfig.shortcuts,
 				commitPromptTemplate: nextConfig.commitPromptTemplate,

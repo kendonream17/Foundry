@@ -13,7 +13,10 @@ export interface UseRuntimeConfigResult {
 		selectedAgentId?: RuntimeAgentId;
 		selectedShortcutLabel?: string | null;
 		agentAutonomousModeEnabled?: boolean;
+<<<<<<< HEAD
 		ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		shortcuts?: RuntimeProjectShortcut[];
 		readyForReviewNotificationsEnabled?: boolean;
 		commitPromptTemplate?: string;
@@ -81,7 +84,10 @@ export function useRuntimeConfig(
 			selectedAgentId?: RuntimeAgentId;
 			selectedShortcutLabel?: string | null;
 			agentAutonomousModeEnabled?: boolean;
+<<<<<<< HEAD
 			ollamaBaseUrl?: string;
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 			shortcuts?: RuntimeProjectShortcut[];
 			readyForReviewNotificationsEnabled?: boolean;
 			commitPromptTemplate?: string;

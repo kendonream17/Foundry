@@ -111,7 +111,10 @@ export function buildRuntimeConfigResponse(
 		selectedAgentId: runtimeConfig.selectedAgentId,
 		selectedShortcutLabel: runtimeConfig.selectedShortcutLabel,
 		agentAutonomousModeEnabled: runtimeConfig.agentAutonomousModeEnabled,
+<<<<<<< HEAD
 		ollamaBaseUrl: runtimeConfig.ollamaBaseUrl,
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 		debugModeEnabled: isRuntimeDebugModeEnabled(),
 		effectiveCommand,
 		globalConfigPath: runtimeConfig.globalConfigPath,

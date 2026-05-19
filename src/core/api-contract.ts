@@ -59,6 +59,7 @@ export const runtimeWorkspaceFileSearchResponseSchema = z.object({
 });
 export type RuntimeWorkspaceFileSearchResponse = z.infer<typeof runtimeWorkspaceFileSearchResponseSchema>;
 
+<<<<<<< HEAD
 export const runtimeFileIndexEntrySchema = z.object({
 	path: z.string(),
 	language: z.string().nullable(),
@@ -71,6 +72,8 @@ export const runtimeFileIndexEntrySchema = z.object({
 });
 export type RuntimeFileIndexEntry = z.infer<typeof runtimeFileIndexEntrySchema>;
 
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 export const runtimeSlashCommandSchema = z.object({
 	name: z.string(),
 	instructions: z.string(),
@@ -86,6 +89,7 @@ export type RuntimeSlashCommandsResponse = z.infer<typeof runtimeSlashCommandsRe
 export const runtimeAgentIdSchema = z.enum(["claude", "codex", "gemini", "opencode", "droid", "kiro", "cline"]);
 export type RuntimeAgentId = z.infer<typeof runtimeAgentIdSchema>;
 
+<<<<<<< HEAD
 export const runtimeAgentRoleSchema = z.enum(["plan", "architect", "worker", "reviewer", "tester"]);
 export type RuntimeAgentRole = z.infer<typeof runtimeAgentRoleSchema>;
 
@@ -106,6 +110,8 @@ export const runtimeModelProfileSchema = z.object({
 });
 export type RuntimeModelProfile = z.infer<typeof runtimeModelProfileSchema>;
 
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 const runtimeBoardColumnIdEnum = z.enum(["backlog", "in_progress", "review", "trash"]);
 export const runtimeBoardColumnIdSchema = z.preprocess(
 	(val) => (val === "done" ? "trash" : val),
@@ -630,6 +636,7 @@ export const runtimeProjectShortcutSchema = z.object({
 });
 export type RuntimeProjectShortcut = z.infer<typeof runtimeProjectShortcutSchema>;
 
+<<<<<<< HEAD
 export const runtimeProjectRuleSchema = z.object({
 	offLimitsGlobs: z.array(z.string()).default([]),
 	contextIncludeGlobs: z.array(z.string()).default([]),
@@ -681,6 +688,8 @@ export const runtimeWorkerNodeSchema = z.object({
 });
 export type RuntimeWorkerNode = z.infer<typeof runtimeWorkerNodeSchema>;
 
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 export const runtimeClineOauthProviderSchema = z.enum(["cline", "oca", "openai-codex"]);
 export type RuntimeClineOauthProvider = z.infer<typeof runtimeClineOauthProviderSchema>;
 
@@ -1025,7 +1034,10 @@ export const runtimeConfigResponseSchema = z.object({
 	selectedAgentId: runtimeAgentIdSchema,
 	selectedShortcutLabel: z.string().nullable(),
 	agentAutonomousModeEnabled: z.boolean(),
+<<<<<<< HEAD
 	ollamaBaseUrl: z.string(),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	debugModeEnabled: z.boolean().optional(),
 	effectiveCommand: z.string().nullable(),
 	globalConfigPath: z.string(),
@@ -1046,7 +1058,10 @@ export const runtimeConfigSaveRequestSchema = z.object({
 	selectedAgentId: runtimeAgentIdSchema.optional(),
 	selectedShortcutLabel: z.string().nullable().optional(),
 	agentAutonomousModeEnabled: z.boolean().optional(),
+<<<<<<< HEAD
 	ollamaBaseUrl: z.string().optional(),
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 	shortcuts: z.array(runtimeProjectShortcutSchema).optional(),
 	readyForReviewNotificationsEnabled: z.boolean().optional(),
 	commitPromptTemplate: z.string().optional(),
@@ -1125,6 +1140,7 @@ export const runtimeTaskChatMessageSchema = z.object({
 });
 export type RuntimeTaskChatMessage = z.infer<typeof runtimeTaskChatMessageSchema>;
 
+<<<<<<< HEAD
 export const runtimePromptRunStatusSchema = z.enum(["queued", "running", "completed", "failed", "cancelled"]);
 export type RuntimePromptRunStatus = z.infer<typeof runtimePromptRunStatusSchema>;
 
@@ -1242,6 +1258,8 @@ export const runtimeWorkerTaskResultSchema = z.object({
 });
 export type RuntimeWorkerTaskResult = z.infer<typeof runtimeWorkerTaskResultSchema>;
 
+=======
+>>>>>>> 0785d1d8b2fecfc8e916e3eb20e6187a14fd02ee
 export const runtimeTaskChatMessagesRequestSchema = z.object({
 	taskId: z.string(),
 });
